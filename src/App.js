@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Login from './Login.js';
 import Home from './Home.js'
+import Header from './Header.js'
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,15 +12,38 @@ import {
 
 const App = () =>{ 
 
+    const [isSignedIn,setSignedIn] = useState(false)
+
+    useEffect(() => {
+        fetch('http://localhost:3001/isAuthenticated',{
+            method:'GET',
+            headers:{
+                "Access-Control-Allow-Origin": "http://localhost:3001"
+            }
+        })
+        .then(res=>res.json)
+        .then(data=>{
+            if(data!=''){
+                setSignedIn(true)
+            }
+        })
+        
+    },[])
+
     return(
-            <Router>               
+            <Router>          
                 <Switch>
+                    {!isSignedIn?<Route  exact path='/home' >
+                        <Header />  
+                        <Home/>
+                    </Route>
+                   :
                     <Route exact path='/'>
                         <Login />
                     </Route>
-                    <Route  exact path='/home' >
-                        <Home/>
-                    </Route>
+                }
+                    
+                    
                 </Switch>
             </Router>
         );

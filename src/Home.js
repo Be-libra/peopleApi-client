@@ -9,6 +9,7 @@ import './home.scss'
 const Home =()=>{
     return(
         <div className='contact-container'>
+            <h2>Contacts <span>(170)</span></h2>
             <div className='head-grid'>
                 <p>Name</p>
                 <p>Email</p>
