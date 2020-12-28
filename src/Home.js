@@ -12,10 +12,10 @@ const Home =()=>{
     const [totalContacts,setTotalContacts] = useState(0)
 
  useEffect(() => {
-    fetch('http://localhost:3001/home/contacts',{
+    fetch('http://54.179.161.126/home/contacts',{
         method:'GET',
             headers:{
-                "Access-Control-Allow-Origin": "http://localhost:3001"
+                "Access-Control-Allow-Origin": "http://54.179.161.126"
             }
     })
     .then(res=>res.json())

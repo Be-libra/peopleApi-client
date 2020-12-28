@@ -15,10 +15,10 @@ const App = () =>{
     const [isSignedIn,setSignedIn] = useState(false)
 
     useEffect(() => {
-        fetch('http://localhost:3001/isAuthenticated',{
+        fetch('http://54.179.161.126:3001/isAuthenticated',{
             method:'GET',
             headers:{
-                "Access-Control-Allow-Origin": "http://localhost:3001"
+                "Access-Control-Allow-Origin": "http://54.179.161.126:3001"
             }
         })
         .then(res=>res.json())

@@ -29,16 +29,16 @@ function Header(props) {
 
     const logout = ()=>{
         props.setSignedIn(false)
-        fetch('http://localhost:3001/logout',{
+        fetch('http://54.179.161.126//logout',{
             method:'GET',
             headers:{
-                "Access-Control-Allow-Origin": "http://localhost:3001"
+                "Access-Control-Allow-Origin": "http://54.179.161.126/:3001"
             }
         })
         .then(res=>res.json())
         .then(check=>{
             if(!check.isAuthenticated){
-                window.open('http://localhost:8080/',"_self")
+                window.open('http://13.250.14.55/',"_self")
             }
         })       
     }
