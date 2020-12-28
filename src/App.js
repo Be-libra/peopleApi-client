@@ -21,20 +21,19 @@ const App = () =>{
                 "Access-Control-Allow-Origin": "http://localhost:3001"
             }
         })
-        .then(res=>res.json)
+        .then(res=>res.json())
         .then(data=>{
-            if(data!=''){
-                setSignedIn(true)
-            }
-        })
+            setSignedIn(data.isAuthenticated)
+        }
+        )
         
     },[])
 
     return(
             <Router>          
                 <Switch>
-                    {!isSignedIn?<Route  exact path='/home' >
-                        <Header />  
+                    {isSignedIn?<Route  exact path='/home' >
+                        <Header setSignedIn={setSignedIn} />  
                         <Home/>
                     </Route>
                    :
