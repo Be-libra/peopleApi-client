@@ -10,10 +10,10 @@ function Header(props) {
         photo:''
     })
     useEffect(() => {
-        fetch('http://localhost:3001/home',{
+        fetch('http://ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001/home',{
             method:'GET',
             headers:{
-                "Access-Control-Allow-Origin": "http://localhost:3001"
+                "Access-Control-Allow-Origin": "http://ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001"
             }
         })
         .then(res=>res.json())
@@ -29,10 +29,10 @@ function Header(props) {
 
     const logout = ()=>{
         props.setSignedIn(false)
-        fetch('http://54.179.161.126//logout',{
+        fetch('http://ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001/logout',{
             method:'GET',
             headers:{
-                "Access-Control-Allow-Origin": "http://54.179.161.126/:3001"
+                "Access-Control-Allow-Origin": "ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001/"
             }
         })
         .then(res=>res.json())

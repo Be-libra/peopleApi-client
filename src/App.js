@@ -15,10 +15,10 @@ const App = () =>{
     const [isSignedIn,setSignedIn] = useState(false)
 
     useEffect(() => {
-        fetch('http://54.179.161.126:3001/isAuthenticated',{
+        fetch('http://ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001/isAuthenticated',{
             method:'GET',
             headers:{
-                "Access-Control-Allow-Origin": "http://54.179.161.126:3001"
+                "Access-Control-Allow-Origin": "http://ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001"
             }
         })
         .then(res=>res.json())

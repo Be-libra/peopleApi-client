@@ -4,10 +4,10 @@ import './login.css'
  const Login =() =>{
     const [url,setUrl] = useState('');
     const reqSignin = ()=>{
-        fetch('http://localhost:3001/',{
+        fetch('http://ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001/',{
             method:'GET',
             headers:{
-                "Access-Control-Allow-Origin": "http://localhost:3001"
+                "Access-Control-Allow-Origin": "http://ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001"
             }
         })
         .then(response => response.json())

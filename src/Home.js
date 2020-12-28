@@ -12,10 +12,10 @@ const Home =()=>{
     const [totalContacts,setTotalContacts] = useState(0)
 
  useEffect(() => {
-    fetch('http://54.179.161.126/home/contacts',{
+    fetch('http://ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001/home/contacts',{
         method:'GET',
             headers:{
-                "Access-Control-Allow-Origin": "http://54.179.161.126"
+                "Access-Control-Allow-Origin": "http://ec2-54-179-161-126.ap-southeast-1.compute.amazonaws.com:3001"
             }
     })
     .then(res=>res.json())
